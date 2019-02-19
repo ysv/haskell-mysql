@@ -18,6 +18,8 @@ import Data.Typeable
 import Data.Text.Conversions
 import Utils
 import ListAll
+import FindById
+import Create
 
 -- tableNames = ["accounts", "sport_sections", "competitions", "sport_section_schedules", "competition_schedules", "affiliations", "participations"]
 
@@ -189,8 +191,8 @@ manager = do
       x <- getLine
       case x of
         "0"       -> listAllManager (getTableName name) conn
-        -- "1"       -> findByManager (getTableName name) conn
-        -- "2"       -> createRowManager (getTableName name) conn
+        "1"       -> findByManager (getTableName name) conn
+        "2"       -> createRowManager (getTableName name) conn
         -- "3"       -> updateRowManager name conn
         -- "4"       -> deleteRowManager (getTableName name) conn
         otherwise -> putStrLn "Bye"

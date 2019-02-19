@@ -1,6 +1,14 @@
 {-# LANGUAGE FlexibleInstances #-}
 {-# LANGUAGE OverloadedStrings #-}
 
+-- Разработать информационную систему "Информационные ресурсы кафедры".
+-- Таблицы БД содержат такую информацию:
+-- Название ресурса, автор (....), текст аннотации, вид, назначение,
+-- дата открытия для использования, срок использования, условия использования,
+-- адреса в сети, информация о пользователях, статистике использования.
+-- Поиск по БД. Предусмотреть возможность введения и корректирования информации.
+-- Количество таблиц должно быть больше 5.
+
 import Data.List
 import Data.String
 import Database.MySQL.Base
@@ -8,58 +16,60 @@ import System.IO
 import qualified System.IO.Streams as Streams
 import Data.Typeable
 import Data.Text.Conversions
+import Utils
+import ListAll
 
-tableNames = ["accounts", "sport_sections", "competitions", "sport_section_schedules", "competition_schedules", "affiliations", "participations"]
+-- tableNames = ["accounts", "sport_sections", "competitions", "sport_section_schedules", "competition_schedules", "affiliations", "participations"]
 
-data TableName = Accounts | SportSections | Competitions | SportSectionSchedules | CompetitionSchedules | Affiliations | Participations
+-- data TableName = Accounts | SportSections | Competitions | SportSectionSchedules | CompetitionSchedules | Affiliations | Participations
 
-toNum str = fromInteger (read (str) :: Integer)
+-- toNum str = fromInteger (read (str) :: Integer)
 
-checkTableName :: [Char] -> Bool
-checkTableName name = if name `elem` tableNames then True else False
+-- checkTableName :: [Char] -> Bool
+-- checkTableName name = if name `elem` tableNames then True else False
 
-tableColumns :: TableName -> [[Char]]
-tableColumns Accounts              = ["fullname", "phone", "email"]
-tableColumns SportSections         = ["name", "description", "trainer"]
-tableColumns Competitions          = ["name", "description", "prize"]
-tableColumns SportSectionSchedules = ["section_id", "day", "time"]
-tableColumns CompetitionSchedules  = ["competition_id", "day", "time"]
-tableColumns Affiliations          = ["section_id", "account_id", "note"]
-tableColumns Participations        = ["competition_id", "account_id", "note"]
+-- tableColumns :: TableName -> [[Char]]
+-- tableColumns Accounts              = ["fullname", "phone", "email"]
+-- tableColumns SportSections         = ["name", "description", "trainer"]
+-- tableColumns Competitions          = ["name", "description", "prize"]
+-- tableColumns SportSectionSchedules = ["section_id", "day", "time"]
+-- tableColumns CompetitionSchedules  = ["competition_id", "day", "time"]
+-- tableColumns Affiliations          = ["section_id", "account_id", "note"]
+-- tableColumns Participations        = ["competition_id", "account_id", "note"]
 
-updatableTableColumns :: [Char] -> [[Char]]
-updatableTableColumns "accounts"                = ["fullname", "phone", "email"]
-updatableTableColumns "sport_sections"          = ["name", "description", "trainer"]
-updatableTableColumns "competitions"            = ["name", "description", "prize"]
-updatableTableColumns "sport_section_schedules" = ["day", "time"]
-updatableTableColumns "competition_schedules"   = ["day", "time"]
-updatableTableColumns "affiliations"            = ["note"]
-updatableTableColumns "participations"          = ["note"]
-updatableTableColumns x                         = []
+-- updatableTableColumns :: [Char] -> [[Char]]
+-- updatableTableColumns "accounts"                = ["fullname", "phone", "email"]
+-- updatableTableColumns "sport_sections"          = ["name", "description", "trainer"]
+-- updatableTableColumns "competitions"            = ["name", "description", "prize"]
+-- updatableTableColumns "sport_section_schedules" = ["day", "time"]
+-- updatableTableColumns "competition_schedules"   = ["day", "time"]
+-- updatableTableColumns "affiliations"            = ["note"]
+-- updatableTableColumns "participations"          = ["note"]
+-- updatableTableColumns x                         = []
 
-checkUpdatableColumns :: [Char] -> [Char] -> Bool
-checkUpdatableColumns tableName columnName = if columnName `elem` (updatableTableColumns tableName) then True else False
+-- checkUpdatableColumns :: [Char] -> [Char] -> Bool
+-- checkUpdatableColumns tableName columnName = if columnName `elem` (updatableTableColumns tableName) then True else False
 
-getTableName :: [Char] -> TableName
-getTableName  "accounts"                = Accounts
-getTableName  "sport_sections"          = SportSections
-getTableName  "competitions"            = Competitions
-getTableName  "sport_section_schedules" = SportSectionSchedules
-getTableName  "competition_schedules"   = CompetitionSchedules
-getTableName  "affiliations"            = Affiliations
-getTableName  "participations"          = Participations
+-- getTableName :: [Char] -> TableName
+-- getTableName  "accounts"                = Accounts
+-- getTableName  "sport_sections"          = SportSections
+-- getTableName  "competitions"            = Competitions
+-- getTableName  "sport_section_schedules" = SportSectionSchedules
+-- getTableName  "competition_schedules"   = CompetitionSchedules
+-- getTableName  "affiliations"            = Affiliations
+-- getTableName  "participations"          = Participations
 
-class ListAll a where
-  listAll :: a -> MySQLConn -> IO ([ColumnDef],(Streams.InputStream [MySQLValue]))
+-- class ListAll a where
+--   listAll :: a -> MySQLConn -> IO ([ColumnDef],(Streams.InputStream [MySQLValue]))
 
-instance ListAll TableName where
-  listAll Accounts conn              = query_ conn "SELECT * FROM accounts"
-  listAll SportSections conn         = query_ conn "SELECT * FROM sport_sections"
-  listAll Competitions conn          = query_ conn "SELECT * FROM competitions"
-  listAll SportSectionSchedules conn = query_ conn "SELECT * FROM sport_section_schedules"
-  listAll CompetitionSchedules conn  = query_ conn "SELECT * FROM competition_schedules"
-  listAll Affiliations conn          = query_ conn "SELECT * FROM affiliations"
-  listAll Participations conn        = query_ conn "SELECT * FROM participations"
+-- instance ListAll TableName where
+--   listAll Accounts conn              = query_ conn "SELECT * FROM accounts"
+--   listAll SportSections conn         = query_ conn "SELECT * FROM sport_sections"
+--   listAll Competitions conn          = query_ conn "SELECT * FROM competitions"
+--   listAll SportSectionSchedules conn = query_ conn "SELECT * FROM sport_section_schedules"
+--   listAll CompetitionSchedules conn  = query_ conn "SELECT * FROM competition_schedules"
+--   listAll Affiliations conn          = query_ conn "SELECT * FROM affiliations"
+--   listAll Participations conn        = query_ conn "SELECT * FROM participations"
 
 class FindById a where
   findById :: a -> [Char] -> MySQLConn -> IO ([ColumnDef],(Streams.InputStream [MySQLValue]))

@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-02-19 20:11:19.867767 UTC
+2019-02-19 20:21:17.574003 UTC
 
 interface main:Main 8063
-  interface hash: 8abf5390265c77d0864676314711f281
-  ABI hash: 480152f714f6bf61a95aea791618d722
+  interface hash: 3a417bd1359bf6b33d5d0f58d3f6d418
+  ABI hash: 4de5026d753773d191bfec1ff89322bc
   export-list hash: 09510d5713d6bca5170232315f72c847
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: 507cdfaa7ebe97ae1ad6a2d1dfe8479d
@@ -16,7 +16,7 @@ interface main:Main 8063
   where
 exports:
   Main.main
-module dependencies:
+module dependencies: Utils
 package dependencies: array-0.5.3.0 base-4.12.0.0
                       base16-bytestring-0.1.1.6 base64-bytestring-1.0.0.2 basement-0.0.10
                       binary-0.8.6.0 binary-ieee754-0.1.0.0 binary-parsers-0.2.3.0
@@ -112,23 +112,37 @@ import  -/  base-4.12.0.0:Data.String 6cd1fdf32014f5e28378e591436070a4
 import  -/  base-4.12.0.0:Data.Typeable d60ded6bb8a1ba55f31a64721dd22b1d
 import  -/  base-4.12.0.0:GHC.Base cc906f98291a1b830546e99a96674547
 import  -/  base-4.12.0.0:GHC.List 734a72beb76d276fb4a0ba2689a5711f
-import  -/  base-4.12.0.0:GHC.Num 847723f2584d989dac1eada133ac3fb8
 import  -/  base-4.12.0.0:Prelude 5c01365ec01f83bd405ac01cbb9a8d76
 import  -/  base-4.12.0.0:System.IO 7d8c7a747c93b42b043d691b66e1809e
-import  -/  base-4.12.0.0:Text.Read e428ad664707f4e90693a55e6a6b4b1a
 import  -/  ghc-prim-0.5.3:GHC.Types 57064c9f957b09bc2e360061ad5cae0b
-import  -/  integer-gmp-1.0.2.0:GHC.Integer.Type 7f56f3d142debd8666df241a1ddc7887
 import  -/  io-streams-1.5.1.0:System.IO.Streams 7e0c595b5477f3748c55c538719012d2
 import  -/  io-streams-1.5.1.0:System.IO.Streams.Internal b85fc76b1244fb4701575e1a7895f1ac
 import  -/  io-streams-1.5.1.0:System.IO.Streams.List 17360441f16aab279400899c5d858273
+import  -/  Utils 1cbf16813db8add51c84bcf2dcc0593d
+  exports: 05070340c2dc96475aac9015330316bb
+  Accounts 288153e11b23f7baf17baae175a81f73
+  Affiliations 7a01f3ed3020bc3529abf69e6049fb8f
+  CompetitionSchedules b902c972ac4567743f3f04f83e2b6677
+  Competitions bb2ce0f19c869a8c41a3c6481d9a1658
+  Participations a8e60bd781c518697b7d5f2fbcf62382
+  SportSectionSchedules f828b073af0370507a4f7deb32c77062
+  SportSections 235619e50c63d3183e7f0ed65f27cdd7
+  TableName 775483fe3bf5cc8398ac3654254e2737
+  checkTableName 1df26b36d60ba27005c0f1c4d4bc5866
+  checkUpdatableColumns 3705d5bd8b586429b7537cad148c8440
+  getTableName b4e2833bcdf08bda3ed96d9eb47b831f
+  tableColumns d60eb49868eb6904119fbd88ac729d90
+  tableNames 162507e533ea62988dbf1b4b35b0a6e2
+  toNum 6b11c7a2d9a838e795c82d79cc8f00a8
+  updatableTableColumns 71ae64ee17d78a5ca1b4b3f723b4921b
 import  -/  mysql-haskell-0.8.4.2:Database.MySQL.Base bda42de3c2db91691685e590d1d8aed2
 import  -/  mysql-haskell-0.8.4.2:Database.MySQL.Connection ded711b6b5e123f51202d165da27a658
 import  -/  mysql-haskell-0.8.4.2:Database.MySQL.Protocol.ColumnDef a21e5b0b330c1b13ce9bf06dc4ee9839
 import  -/  mysql-haskell-0.8.4.2:Database.MySQL.Protocol.MySQLValue b762983e5185053a8ec1f927e47815cd
 import  -/  mysql-haskell-0.8.4.2:Database.MySQL.Protocol.Packet 3ac248ef2f3a96b810d8b155238f4212
 import  -/  text-conversions-0.3.0:Data.Text.Conversions 2cdf776d975ee73aff6fa1175ce4723c
-3fb605b48213c2fe6ed336a532cb3db6
-  $fCreateTableName :: Main.Create Main.TableName
+e3593085c990c39a7492baf9e61d783e
+  $fCreateTableName :: Main.Create Utils.TableName
   DFunId
   {- Arity: 4,
      Strictness: <S,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
@@ -136,15 +150,15 @@ import  -/  text-conversions-0.3.0:Data.Text.Conversions 2cdf776d975ee73aff6fa11
      Unfolding: InlineRule (0, False, True)
                 Main.$fCreateTableName1
                   `cast`
-                ((<Main.TableName>_R
+                ((<Utils.TableName>_R
                   ->_R <[[GHC.Types.Char]]>_R
                   ->_R <Database.MySQL.Connection.MySQLConn>_R
                   ->_R Sym (GHC.Types.N:IO[0]
                                 <Database.MySQL.Protocol.Packet.OK>_R)) ; Sym (Main.N:Create[0]
-                                                                                   <Main.TableName>_N)) -}
-fa31791564365d5bb9a8fe9a26c8d9bc
+                                                                                   <Utils.TableName>_N)) -}
+802e107d36582e9e015b9b8bd81827e9
   $fCreateTableName1 ::
-    Main.TableName
+    Utils.TableName
     -> [[GHC.Types.Char]]
     -> Database.MySQL.Connection.MySQLConn
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -154,14 +168,14 @@ fa31791564365d5bb9a8fe9a26c8d9bc
      Strictness: <S,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
      Inline: [2],
      Unfolding: InlineRule (4, True, False)
-                (\ (w72 :: Main.TableName)
+                (\ (w72 :: Utils.TableName)
                    (w73 :: [[GHC.Types.Char]])
                    (w74 :: Database.MySQL.Connection.MySQLConn)
                    (w75 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
                  case w74 of ww { Database.MySQL.Connection.MySQLConn ww1 ww2 ww3 ww4 ww5 ->
                  Main.$w$ccreateRow w72 w73 ww1 ww3 ww5 w75 }) -}
-14a5f8b5d20530e6efa5e16065a795e1
-  $fDeleteTableName :: Main.Delete Main.TableName
+6f2fe16f510e1e374324a7cb232b8782
+  $fDeleteTableName :: Main.Delete Utils.TableName
   DFunId
   {- Arity: 4,
      Strictness: <S,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
@@ -169,15 +183,15 @@ fa31791564365d5bb9a8fe9a26c8d9bc
      Unfolding: InlineRule (0, False, True)
                 Main.$fDeleteTableName1
                   `cast`
-                ((<Main.TableName>_R
+                ((<Utils.TableName>_R
                   ->_R <[GHC.Types.Char]>_R
                   ->_R <Database.MySQL.Connection.MySQLConn>_R
                   ->_R Sym (GHC.Types.N:IO[0]
                                 <Database.MySQL.Protocol.Packet.OK>_R)) ; Sym (Main.N:Delete[0]
-                                                                                   <Main.TableName>_N)) -}
-73eb388c2ad6068f4e8896f4ce05edfa
+                                                                                   <Utils.TableName>_N)) -}
+2c4c233ea22b19c06df4d45b94db5ab5
   $fDeleteTableName1 ::
-    Main.TableName
+    Utils.TableName
     -> [GHC.Types.Char]
     -> Database.MySQL.Connection.MySQLConn
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -187,14 +201,14 @@ fa31791564365d5bb9a8fe9a26c8d9bc
      Strictness: <S,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
      Inline: [2],
      Unfolding: InlineRule (4, True, False)
-                (\ (w72 :: Main.TableName)
+                (\ (w72 :: Utils.TableName)
                    (w73 :: [GHC.Types.Char])
                    (w74 :: Database.MySQL.Connection.MySQLConn)
                    (w75 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
                  case w74 of ww { Database.MySQL.Connection.MySQLConn ww1 ww2 ww3 ww4 ww5 ->
                  Main.$w$cdeleteRow w72 w73 ww1 ww3 ww5 w75 }) -}
-f7b34e4af888952fee03805e99f9266f
-  $fFindByIdTableName :: Main.FindById Main.TableName
+0e57608d1e8b92177c05670ef7633702
+  $fFindByIdTableName :: Main.FindById Utils.TableName
   DFunId
   {- Arity: 4,
      Strictness: <S,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
@@ -202,17 +216,17 @@ f7b34e4af888952fee03805e99f9266f
      Unfolding: InlineRule (0, False, True)
                 Main.$fFindByIdTableName1
                   `cast`
-                ((<Main.TableName>_R
+                ((<Utils.TableName>_R
                   ->_R <[GHC.Types.Char]>_R
                   ->_R <Database.MySQL.Connection.MySQLConn>_R
                   ->_R Sym (GHC.Types.N:IO[0]
                                 <([Database.MySQL.Protocol.ColumnDef.ColumnDef],
                                   System.IO.Streams.Internal.InputStream
                                     [Database.MySQL.Protocol.MySQLValue.MySQLValue])>_R)) ; Sym (Main.N:FindById[0]
-                                                                                                     <Main.TableName>_N)) -}
-107cb30d0e245fe54ab7df5fdfc72dee
+                                                                                                     <Utils.TableName>_N)) -}
+8c77af3d37241cce2122f7503fb007a5
   $fFindByIdTableName1 ::
-    Main.TableName
+    Utils.TableName
     -> [GHC.Types.Char]
     -> Database.MySQL.Connection.MySQLConn
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -224,14 +238,14 @@ f7b34e4af888952fee03805e99f9266f
      Strictness: <S,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
      Inline: [2],
      Unfolding: InlineRule (4, True, False)
-                (\ (w72 :: Main.TableName)
+                (\ (w72 :: Utils.TableName)
                    (w73 :: [GHC.Types.Char])
                    (w74 :: Database.MySQL.Connection.MySQLConn)
                    (w75 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
                  case w74 of ww { Database.MySQL.Connection.MySQLConn ww1 ww2 ww3 ww4 ww5 ->
                  Main.$w$cfindById w72 w73 ww1 ww3 ww5 w75 }) -}
-76ec48c2239fc128311c5097fff039b3
-  $fListAllTableName :: Main.ListAll Main.TableName
+2aa45511800295714f44f1880f7852f9
+  $fListAllTableName :: Main.ListAll Utils.TableName
   DFunId
   {- Arity: 3,
      Strictness: <S,1*U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
@@ -239,16 +253,16 @@ f7b34e4af888952fee03805e99f9266f
      Unfolding: InlineRule (0, False, True)
                 Main.$fListAllTableName1
                   `cast`
-                ((<Main.TableName>_R
+                ((<Utils.TableName>_R
                   ->_R <Database.MySQL.Connection.MySQLConn>_R
                   ->_R Sym (GHC.Types.N:IO[0]
                                 <([Database.MySQL.Protocol.ColumnDef.ColumnDef],
                                   System.IO.Streams.Internal.InputStream
                                     [Database.MySQL.Protocol.MySQLValue.MySQLValue])>_R)) ; Sym (Main.N:ListAll[0]
-                                                                                                     <Main.TableName>_N)) -}
-58146363f577f8f049bec81f3a1506ee
+                                                                                                     <Utils.TableName>_N)) -}
+b318ca24834cda58d7f81524af656769
   $fListAllTableName1 ::
-    Main.TableName
+    Utils.TableName
     -> Database.MySQL.Connection.MySQLConn
     -> GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld,
@@ -259,7 +273,7 @@ f7b34e4af888952fee03805e99f9266f
      Strictness: <S,1*U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
      Inline: [2],
      Unfolding: InlineRule (3, True, False)
-                (\ (w72 :: Main.TableName)
+                (\ (w72 :: Utils.TableName)
                    (w73 :: Database.MySQL.Connection.MySQLConn)
                    (w74 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
                  case w73 of ww { Database.MySQL.Connection.MySQLConn ww1 ww2 ww3 ww4 ww5 ->
@@ -541,8 +555,8 @@ e276307fc5ada4512d5e88915902b75c
 747ddc57286287fc83a73333d1c8f0db
   $fListAllTableName9 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("SELECT * FROM affiliations"#) -}
-d54a5a58b1073989305b7110ecf9bc03
-  $fUpdateTableName :: Main.Update Main.TableName
+49252e08620bd5bffcf433ae0b4fa0c7
+  $fUpdateTableName :: Main.Update Utils.TableName
   DFunId
   {- Arity: 6,
      Strictness: <S,1*U><S,U><L,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
@@ -550,17 +564,17 @@ d54a5a58b1073989305b7110ecf9bc03
      Unfolding: InlineRule (0, False, True)
                 Main.$fUpdateTableName1
                   `cast`
-                ((<Main.TableName>_R
+                ((<Utils.TableName>_R
                   ->_R <[GHC.Types.Char]>_R
                   ->_R <[GHC.Types.Char]>_R
                   ->_R <[GHC.Types.Char]>_R
                   ->_R <Database.MySQL.Connection.MySQLConn>_R
                   ->_R Sym (GHC.Types.N:IO[0]
                                 <Database.MySQL.Protocol.Packet.OK>_R)) ; Sym (Main.N:Update[0]
-                                                                                   <Main.TableName>_N)) -}
-a07e6187b418b4bdba272908f16c32b7
+                                                                                   <Utils.TableName>_N)) -}
+815686cd0f873f70e548762e528c3d7c
   $fUpdateTableName1 ::
-    Main.TableName
+    Utils.TableName
     -> [GHC.Types.Char]
     -> [GHC.Types.Char]
     -> [GHC.Types.Char]
@@ -572,7 +586,7 @@ a07e6187b418b4bdba272908f16c32b7
      Strictness: <S,1*U><S,U><L,1*U><L,U><S(LLC(C(S(SL)))LS),1*U(C(U(U,1*U)),A,C(C1(U(U,A))),A,U)><S,U>,
      Inline: [2],
      Unfolding: InlineRule (6, True, False)
-                (\ (w72 :: Main.TableName)
+                (\ (w72 :: Utils.TableName)
                    (w73 :: [GHC.Types.Char])
                    (w74 :: [GHC.Types.Char])
                    (w75 :: [GHC.Types.Char])
@@ -580,43 +594,6 @@ a07e6187b418b4bdba272908f16c32b7
                    (w77 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
                  case w76 of ww { Database.MySQL.Connection.MySQLConn ww1 ww2 ww3 ww4 ww5 ->
                  Main.$w$cupdateRow w72 w73 w74 w75 ww1 ww3 ww5 w77 }) -}
-063399347c93928461a5f27b96ce17e9
-  $tc'Accounts :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   9933101180863283910##
-                   12265530469954025498##
-                   Main.$trModule
-                   Main.$tc'Accounts2
-                   0#
-                   Main.$tc'Accounts1) -}
-75ef94c08f6a885e5109bb5fa697895b
-  $tc'Accounts1 :: GHC.Types.KindRep
-  {- HasNoCafRefs, Strictness: m1, Inline: [~] -}
-68bd03f7015824d51c801180fe130fdf
-  $tc'Accounts2 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'Accounts3) -}
-073d3243d9c70d941e32a274a631206e
-  $tc'Accounts3 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'Accounts"#) -}
-c79e19aa54b9c10ebeebb604b01f18ac
-  $tc'Affiliations :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   11229071676405352622##
-                   16537270704132252262##
-                   Main.$trModule
-                   Main.$tc'Affiliations1
-                   0#
-                   Main.$tc'Accounts1) -}
-babb18ff247b546263bb7bc43af55f76
-  $tc'Affiliations1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'Affiliations2) -}
-e8481cbe9ffe6987d5e39f8bb736a1e4
-  $tc'Affiliations2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'Affiliations"#) -}
 7727af63f0fc18787623a8809481f135
   $tc'C:Create :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -717,91 +694,6 @@ cb4e369dbeb1bdf6f9941f9779ce7af2
 77df05355fc831394193328515e117d3
   $tc'C:Update3 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("'C:Update"#) -}
-34c6b736a274f5123da34c5662bd9bba
-  $tc'CompetitionSchedules :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   5867090715733061859##
-                   1046840996442426630##
-                   Main.$trModule
-                   Main.$tc'CompetitionSchedules1
-                   0#
-                   Main.$tc'Accounts1) -}
-47facdb8f80cc9c677a8d585ff2757ad
-  $tc'CompetitionSchedules1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'CompetitionSchedules2) -}
-45f88855f0da5c1084c7c5f41ab2cee1
-  $tc'CompetitionSchedules2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'CompetitionSchedules"#) -}
-2b57b9abb377090dfcc83b4d14c18765
-  $tc'Competitions :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   2234095072873109786##
-                   13749713884561865895##
-                   Main.$trModule
-                   Main.$tc'Competitions1
-                   0#
-                   Main.$tc'Accounts1) -}
-14459bdf609e3390de153e9ae1744cc0
-  $tc'Competitions1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'Competitions2) -}
-7e789b17ee52acd1f6f4e447bc1cf252
-  $tc'Competitions2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'Competitions"#) -}
-5fd01bee3e50c99f23c1ec01535a697d
-  $tc'Participations :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   5569033282732623235##
-                   15996981839323770543##
-                   Main.$trModule
-                   Main.$tc'Participations1
-                   0#
-                   Main.$tc'Accounts1) -}
-2a5e7fbb352274ee5e0452c737cbc082
-  $tc'Participations1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'Participations2) -}
-7041e44d8b3830ce38d05ef185d90899
-  $tc'Participations2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'Participations"#) -}
-dda80108d0aceb29dd51ba1d817a447b
-  $tc'SportSectionSchedules :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   7383442917079166932##
-                   14880533617164004032##
-                   Main.$trModule
-                   Main.$tc'SportSectionSchedules1
-                   0#
-                   Main.$tc'Accounts1) -}
-c13ac49bd85b912fc35107f79941c68e
-  $tc'SportSectionSchedules1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'SportSectionSchedules2) -}
-b31f201edc8f6a3cfbc9644a67b05ca1
-  $tc'SportSectionSchedules2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'SportSectionSchedules"#) -}
-5551bfbe7a885f96be966fddbdf967b3
-  $tc'SportSections :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   14782009491384176326##
-                   6943640577639018264##
-                   Main.$trModule
-                   Main.$tc'SportSections1
-                   0#
-                   Main.$tc'Accounts1) -}
-95b64746e0a0be1235365f6d524833a5
-  $tc'SportSections1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tc'SportSections2) -}
-0c83b89e6157cd57fb8cbc0510e8437e
-  $tc'SportSections2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("'SportSections"#) -}
 e68a800a17a2086836bcff7c5acc76c9
   $tcCreate :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -873,23 +765,6 @@ f5d6a3f12bc12b894eb32f64e3b46c3f
 00d0875db2b2dca34d4850bb4d88088e
   $tcListAll2 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("ListAll"#) -}
-fef33e0f2e16f4225038ade6ba27d850
-  $tcTableName :: GHC.Types.TyCon
-  {- HasNoCafRefs, Strictness: m,
-     Unfolding: (GHC.Types.TyCon
-                   4704960985957983433##
-                   3357395818595482132##
-                   Main.$trModule
-                   Main.$tcTableName1
-                   0#
-                   GHC.Types.krep$*) -}
-6be18174a9e81ace7e2f4ba3f60bc687
-  $tcTableName1 :: GHC.Types.TrName
-  {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS Main.$tcTableName2) -}
-ee88bcc273980b632576490e33b4c66f
-  $tcTableName2 :: GHC.Prim.Addr#
-  {- HasNoCafRefs, Unfolding: ("TableName"#) -}
 d884fa203eae6a24a907bc4a6b828530
   $tcUpdate :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -925,9 +800,9 @@ e5875966b74dad2d29772660b8a75e33
 d026be77cb9ced20e35a61514e0458aa
   $trModule4 :: GHC.Prim.Addr#
   {- HasNoCafRefs, Unfolding: ("main"#) -}
-ac30d998f4c7e8de2319e7d0be585360
+c63ec4b35c6bb83bb261fa5ba83a68b2
   $w$ccreateRow ::
-    Main.TableName
+    Utils.TableName
     -> [[GHC.Types.Char]]
     -> GHC.Types.IO
          (GHC.Maybe.Maybe Database.MySQL.Protocol.Packet.Packet)
@@ -939,9 +814,9 @@ ac30d998f4c7e8de2319e7d0be585360
   {- Arity: 6,
      Strictness: <S,1*U><L,U><L,C(U(U,1*U))><C(C(S(SL))),C(C1(U(U,A)))><S,U><S,U>,
      Inline: [2] -}
-2ba5322bb2c3165690881c543a89a3fe
+0f3b34eff1d33d6565e877b9206041d2
   $w$cdeleteRow ::
-    Main.TableName
+    Utils.TableName
     -> [GHC.Types.Char]
     -> GHC.Types.IO
          (GHC.Maybe.Maybe Database.MySQL.Protocol.Packet.Packet)
@@ -953,9 +828,9 @@ ac30d998f4c7e8de2319e7d0be585360
   {- Arity: 6,
      Strictness: <S,1*U><L,U><L,C(U(U,1*U))><C(C(S(SL))),C(C1(U(U,A)))><S,U><S,U>,
      Inline: [2] -}
-8b28114ec7b88be72e4c59be0f48d23e
+62cbe3efe80b0045ca68e91111fac741
   $w$cfindById ::
-    Main.TableName
+    Utils.TableName
     -> [GHC.Types.Char]
     -> GHC.Types.IO
          (GHC.Maybe.Maybe Database.MySQL.Protocol.Packet.Packet)
@@ -969,9 +844,9 @@ ac30d998f4c7e8de2319e7d0be585360
   {- Arity: 6,
      Strictness: <S,1*U><L,U><L,C(U(U,1*U))><C(C(S(SL))),C(C1(U(U,A)))><S,U><S,U>,
      Inline: [2] -}
-9c84123e78aaaf4e32ae04c1348001a3
+861b9fa3368295058bea675725d17c77
   $w$clistAll ::
-    Main.TableName
+    Utils.TableName
     -> GHC.Types.IO
          (GHC.Maybe.Maybe Database.MySQL.Protocol.Packet.Packet)
     -> (Database.MySQL.Protocol.Packet.Packet -> GHC.Types.IO ())
@@ -984,14 +859,14 @@ ac30d998f4c7e8de2319e7d0be585360
   {- Arity: 5,
      Strictness: <S,1*U><L,C(U(U,1*U))><C(C(S(SL))),C(C1(U(U,A)))><S,U><S,U>,
      Inline: [2],
-     Unfolding: (\ (w72 :: Main.TableName)
+     Unfolding: (\ (w72 :: Utils.TableName)
                    (ww :: GHC.Types.IO
                             (GHC.Maybe.Maybe Database.MySQL.Protocol.Packet.Packet))
                    (ww1 :: Database.MySQL.Protocol.Packet.Packet -> GHC.Types.IO ())
                    (ww2 :: GHC.Prim.MutVar# GHC.Prim.RealWorld GHC.Types.Bool)
                    (w73 :: GHC.Prim.State# GHC.Prim.RealWorld) ->
                  case w72 of wild {
-                   Main.Accounts
+                   Utils.Accounts
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1001,7 +876,7 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73
-                   Main.SportSections
+                   Utils.SportSections
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1011,7 +886,7 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73
-                   Main.Competitions
+                   Utils.Competitions
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1021,7 +896,7 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73
-                   Main.SportSectionSchedules
+                   Utils.SportSectionSchedules
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1031,7 +906,7 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73
-                   Main.CompetitionSchedules
+                   Utils.CompetitionSchedules
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1041,7 +916,7 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73
-                   Main.Affiliations
+                   Utils.Affiliations
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1051,7 +926,7 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73
-                   Main.Participations
+                   Utils.Participations
                    -> Database.MySQL.Base.$wquery_
                         ww
                         ww1
@@ -1061,9 +936,9 @@ ac30d998f4c7e8de2319e7d0be585360
                         (Nth:3
                              (<GHC.Base.String>_R ->_R Sym (Database.MySQL.Query.N:Query[0])))
                         w73 }) -}
-00a84c7e59b59c614c522ff4ec00d532
+19501eccdec9573591eb6258766d9034
   $w$cupdateRow ::
-    Main.TableName
+    Utils.TableName
     -> [GHC.Types.Char]
     -> [GHC.Types.Char]
     -> [GHC.Types.Char]
@@ -1089,21 +964,21 @@ a4dd94e976a9e399206d4471acabc4bc
           Data.ByteString.Builder.Internal.BuildSignal r #)
   {- Arity: 5, HasNoCafRefs,
      Strictness: <S,1*U><L,C(C1(U(U,U)))><S,U><L,U><S,U>, Inline: [2] -}
-3fb605b48213c2fe6ed336a532cb3db6
+e3593085c990c39a7492baf9e61d783e
   class Create a where
     createRow :: a
                  -> [[GHC.Types.Char]]
                  -> Database.MySQL.Connection.MySQLConn
                  -> GHC.Types.IO Database.MySQL.Protocol.Packet.OK
     {-# MINIMAL createRow #-}
-14a5f8b5d20530e6efa5e16065a795e1
+6f2fe16f510e1e374324a7cb232b8782
   class Delete a where
     deleteRow :: a
                  -> [GHC.Types.Char]
                  -> Database.MySQL.Connection.MySQLConn
                  -> GHC.Types.IO Database.MySQL.Protocol.Packet.OK
     {-# MINIMAL deleteRow #-}
-f7b34e4af888952fee03805e99f9266f
+0e57608d1e8b92177c05670ef7633702
   class FindById a where
     findById :: a
                 -> [GHC.Types.Char]
@@ -1113,7 +988,7 @@ f7b34e4af888952fee03805e99f9266f
                       System.IO.Streams.Internal.InputStream
                         [Database.MySQL.Protocol.MySQLValue.MySQLValue])
     {-# MINIMAL findById #-}
-76ec48c2239fc128311c5097fff039b3
+2aa45511800295714f44f1880f7852f9
   class ListAll a where
     listAll :: a
                -> Database.MySQL.Connection.MySQLConn
@@ -1122,16 +997,7 @@ f7b34e4af888952fee03805e99f9266f
                      System.IO.Streams.Internal.InputStream
                        [Database.MySQL.Protocol.MySQLValue.MySQLValue])
     {-# MINIMAL listAll #-}
-c3d5736012f1c0ee19c767cd660eabe7
-  data TableName
-    = Accounts
-    | SportSections
-    | Competitions
-    | SportSectionSchedules
-    | CompetitionSchedules
-    | Affiliations
-    | Participations
-d54a5a58b1073989305b7110ecf9bc03
+49252e08620bd5bffcf433ae0b4fa0c7
   class Update a where
     updateRow :: a
                  -> [GHC.Types.Char]
@@ -1158,11 +1024,11 @@ b4f9ae97a091b232a88173a93240314d
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-instance Main.Create [Main.TableName] = Main.$fCreateTableName
-instance Main.Delete [Main.TableName] = Main.$fDeleteTableName
-instance Main.FindById [Main.TableName] = Main.$fFindByIdTableName
-instance Main.ListAll [Main.TableName] = Main.$fListAllTableName
-instance Main.Update [Main.TableName] = Main.$fUpdateTableName
+instance Main.Create [Utils.TableName] = Main.$fCreateTableName
+instance Main.Delete [Utils.TableName] = Main.$fDeleteTableName
+instance Main.FindById [Utils.TableName] = Main.$fFindByIdTableName
+instance Main.ListAll [Utils.TableName] = Main.$fListAllTableName
+instance Main.Update [Utils.TableName] = Main.$fUpdateTableName
 trusted: none
 require own pkg trusted: False
 module header:

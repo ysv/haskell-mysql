@@ -1,7 +1,0 @@
-Configuring word24-2.0.1...
-Preprocessing library for word24-2.0.1..
-Building library for word24-2.0.1..
-[1 of 2] Compiling Data.Word.Word24 ( src/Data/Word/Word24.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Word/Word24.o )
-[2 of 2] Compiling Data.Int.Int24   ( src/Data/Int/Int24.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Int/Int24.o )
-Installing library in /Users/yaroslavsavchuk/.stack/snapshots/x86_64-osx/lts-13.8/8.6.3/lib/x86_64-osx-ghc-8.6.3/word24-2.0.1-AYPdCVd56RLKVUAFs6kj7F
-Registering library for word24-2.0.1..

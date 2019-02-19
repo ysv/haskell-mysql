@@ -20,6 +20,7 @@ import Utils
 import ListAll
 import FindById
 import Create
+import Delete
 
 -- tableNames = ["accounts", "sport_sections", "competitions", "sport_section_schedules", "competition_schedules", "affiliations", "participations"]
 
@@ -194,7 +195,7 @@ manager = do
         "1"       -> findByManager (getTableName name) conn
         "2"       -> createRowManager (getTableName name) conn
         -- "3"       -> updateRowManager name conn
-        -- "4"       -> deleteRowManager (getTableName name) conn
+        "4"       -> deleteRowManager (getTableName name) conn
         otherwise -> putStrLn "Bye"
     else do
       putStrLn "Table doesn't exist :("

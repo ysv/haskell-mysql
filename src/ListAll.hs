@@ -1,11 +1,29 @@
+{-# LANGUAGE FlexibleInstances #-}
+{-# LANGUAGE OverloadedStrings #-}
+
+module ListAll where
+
+import Data.List
+import Data.String
+import Database.MySQL.Base
+import System.IO
+import qualified System.IO.Streams as Streams
+import Data.Typeable
+import Data.Text.Conversions
+import Utils
+
 class ListAll a where
     listAll :: a -> MySQLConn -> IO ([ColumnDef],(Streams.InputStream [MySQLValue]))
   
-  instance ListAll TableName where
-    listAll Accounts conn              = query_ conn "SELECT * FROM accounts"
-    listAll SportSections conn         = query_ conn "SELECT * FROM sport_sections"
-    listAll Competitions conn          = query_ conn "SELECT * FROM competitions"
-    listAll SportSectionSchedules conn = query_ conn "SELECT * FROM sport_section_schedules"
-    listAll CompetitionSchedules conn  = query_ conn "SELECT * FROM competition_schedules"
-    listAll Affiliations conn          = query_ conn "SELECT * FROM affiliations"
-    listAll Participations conn        = query_ conn "SELECT * FROM participations"
+instance ListAll TableName where
+    listAll Activities conn = query_ conn "SELECT * FROM activities"
+    listAll Users conn      = query_ conn "SELECT * FROM users"
+    listAll Resources conn  = query_ conn "SELECT * FROM resources"
+    listAll Catalogs conn   = query_ conn "SELECT * FROM catalogs"
+    listAll Authors conn    = query_ conn "SELECT * FROM authors"
+
+listAllManager :: TableName -> MySQLConn -> IO ()
+listAllManager tableName conn = do
+  (defs, is) <- listAll tableName conn
+  print (["id"] ++ (tableColumns tableName))
+  mapM_ print =<< Streams.toList is

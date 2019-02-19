@@ -1,0 +1,6 @@
+Configuring text-conversions-0.3.0...
+Preprocessing library for text-conversions-0.3.0..
+Building library for text-conversions-0.3.0..
+[1 of 1] Compiling Data.Text.Conversions ( src/Data/Text/Conversions.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Text/Conversions.o )
+Installing library in /Users/yaroslavsavchuk/.stack/snapshots/x86_64-osx/lts-13.8/8.6.3/lib/x86_64-osx-ghc-8.6.3/text-conversions-0.3.0-DgEnUcv8tzX2kQWUYFGIuo
+Registering library for text-conversions-0.3.0..

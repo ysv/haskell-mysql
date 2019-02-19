@@ -1,0 +1,121 @@
+Configuring zlib-bindings-0.1.1.5...
+Preprocessing library for zlib-bindings-0.1.1.5..
+Building library for zlib-bindings-0.1.1.5..
+[1 of 2] Compiling Codec.Zlib.Lowlevel ( Codec/Zlib/Lowlevel.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Codec/Zlib/Lowlevel.o )
+[2 of 2] Compiling Codec.Zlib       ( Codec/Zlib.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Codec/Zlib.o )
+
+[;1mc/helper.c:32:45: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: passing 'const char *' to parameter of type 'const Bytef *' (aka 'const unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+            return inflateSetDictionary(stream, dictionary, dictLength);
+                                                ^~~~~~~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m32 |[0m[0m         return inflateSetDictionary(stream, [;1m[31md[0m[0mictionary, dictLength);
+[;1m[34m   |[0m[0m[;1m[31m                                             ^[0m[0m
+[0m[0m[0m
+[;1m/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/zlib.h:892:59: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     note: passing argument to parameter 'dictionary' here
+                                                 const Bytef *dictionary,
+                                                              ^[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m892 |[0m[0m                                              const Bytef *[;1m[31md[0m[0mictionary,
+[;1m[34m    |[0m[0m[;1m[31m                                                           ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:37:45: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: passing 'const char *' to parameter of type 'const Bytef *' (aka 'const unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+            return deflateSetDictionary(stream, dictionary, dictLength);
+                                                ^~~~~~~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m37 |[0m[0m         return deflateSetDictionary(stream, [;1m[31md[0m[0mictionary, dictLength);
+[;1m[34m   |[0m[0m[;1m[31m                                             ^[0m[0m
+[0m[0m[0m
+[;1m/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/zlib.h:617:59: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     note: passing argument to parameter 'dictionary' here
+                                                 const Bytef *dictionary,
+                                                              ^[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m617 |[0m[0m                                              const Bytef *[;1m[31md[0m[0mictionary,
+[;1m[34m    |[0m[0m[;1m[31m                                                           ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:48:18: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: assigning to 'Bytef *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+            stream->next_in = buff;
+                            ^ ~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m48 |[0m[0m         stream->n[;1m[31me[0m[0mxt_in = buff;
+[;1m[34m   |[0m[0m[;1m[31m                  ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:54:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: assigning to 'Bytef *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+            stream->next_out = buff;
+                             ^ ~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m54 |[0m[0m         stream->ne[;1m[31mx[0m[0mt_out = buff;
+[;1m[34m   |[0m[0m[;1m[31m                   ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:75:9: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: returning 'Bytef *' (aka 'unsigned char *') from a function with result type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+            return stream->next_in;
+                   ^~~~~~~~~~~~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m75 |[0m[0m         [;1m[31mr[0m[0meturn stream->next_in;
+[;1m[34m   |[0m[0m[;1m[31m         ^[0m[0m
+[0m[0m[0m5 warnings generated.
+
+[;1mc/helper.c:32:45: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: passing 'const char *' to parameter of type 'const Bytef *' (aka 'const unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+            return inflateSetDictionary(stream, dictionary, dictLength);
+                                                ^~~~~~~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m32 |[0m[0m         return inflateSetDictionary(stream, [;1m[31md[0m[0mictionary, dictLength);
+[;1m[34m   |[0m[0m[;1m[31m                                             ^[0m[0m
+[0m[0m[0m
+[;1m/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/zlib.h:892:59: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     note: passing argument to parameter 'dictionary' here
+                                                 const Bytef *dictionary,
+                                                              ^[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m892 |[0m[0m                                              const Bytef *[;1m[31md[0m[0mictionary,
+[;1m[34m    |[0m[0m[;1m[31m                                                           ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:37:45: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: passing 'const char *' to parameter of type 'const Bytef *' (aka 'const unsigned char *') converts between pointers to integer types with different sign [-Wpointer-sign]
+            return deflateSetDictionary(stream, dictionary, dictLength);
+                                                ^~~~~~~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m37 |[0m[0m         return deflateSetDictionary(stream, [;1m[31md[0m[0mictionary, dictLength);
+[;1m[34m   |[0m[0m[;1m[31m                                             ^[0m[0m
+[0m[0m[0m
+[;1m/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/usr/include/zlib.h:617:59: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     note: passing argument to parameter 'dictionary' here
+                                                 const Bytef *dictionary,
+                                                              ^[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m617 |[0m[0m                                              const Bytef *[;1m[31md[0m[0mictionary,
+[;1m[34m    |[0m[0m[;1m[31m                                                           ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:48:18: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: assigning to 'Bytef *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+            stream->next_in = buff;
+                            ^ ~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m48 |[0m[0m         stream->n[;1m[31me[0m[0mxt_in = buff;
+[;1m[34m   |[0m[0m[;1m[31m                  ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:54:19: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: assigning to 'Bytef *' (aka 'unsigned char *') from 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+            stream->next_out = buff;
+                             ^ ~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m54 |[0m[0m         stream->ne[;1m[31mx[0m[0mt_out = buff;
+[;1m[34m   |[0m[0m[;1m[31m                   ^[0m[0m
+[0m[0m[0m
+[;1mc/helper.c:75:9: [;1m[31merror:[0m[0m[;1m[0m[0m[;1m
+     warning: returning 'Bytef *' (aka 'unsigned char *') from a function with result type 'char *' converts between pointers to integer types with different sign [-Wpointer-sign]
+            return stream->next_in;
+                   ^~~~~~~~~~~~~~~[0m[0m
+[;1m[34m   |[0m[0m
+[;1m[34m75 |[0m[0m         [;1m[31mr[0m[0meturn stream->next_in;
+[;1m[34m   |[0m[0m[;1m[31m         ^[0m[0m
+[0m[0m[0m5 warnings generated.
+Installing library in /Users/yaroslavsavchuk/.stack/snapshots/x86_64-osx/lts-13.8/8.6.3/lib/x86_64-osx-ghc-8.6.3/zlib-bindings-0.1.1.5-KS2aCnZyPBqLNpyT6qr2uU
+Registering library for zlib-bindings-0.1.1.5..

@@ -1,0 +1,6 @@
+Configuring binary-ieee754-0.1.0.0...
+Preprocessing library for binary-ieee754-0.1.0.0..
+Building library for binary-ieee754-0.1.0.0..
+[1 of 1] Compiling Data.Binary.IEEE754 ( Data/Binary/IEEE754.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Binary/IEEE754.o )
+Installing library in /Users/yaroslavsavchuk/.stack/snapshots/x86_64-osx/lts-13.8/8.6.3/lib/x86_64-osx-ghc-8.6.3/binary-ieee754-0.1.0.0-GcOBlns0MzlHq18YXsKGFj
+Registering library for binary-ieee754-0.1.0.0..

@@ -1,0 +1,17 @@
+Configuring binary-parsers-0.2.3.0...
+Preprocessing library for binary-parsers-0.2.3.0..
+Building library for binary-parsers-0.2.3.0..
+[1 of 4] Compiling Data.Binary.Parser.Word8 ( Data/Binary/Parser/Word8.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Binary/Parser/Word8.o )
+[2 of 4] Compiling Data.Binary.Parser.Numeric ( Data/Binary/Parser/Numeric.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Binary/Parser/Numeric.o )
+[3 of 4] Compiling Data.Binary.Parser.Char8 ( Data/Binary/Parser/Char8.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Binary/Parser/Char8.o )
+[4 of 4] Compiling Data.Binary.Parser ( Data/Binary/Parser.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/Data/Binary/Parser.o )
+
+[;1mData/Binary/Parser.hs:111:1: [;1m[35mwarning:[0m[0m[;1m [[;1m[35m-Wunused-imports[0m[0m[;1m][0m[0m[;1m
+    The qualified import of ‘Data.ByteString.Lazy’ is redundant
+      except perhaps to import instances from ‘Data.ByteString.Lazy’
+    To import instances alone, use: import Data.ByteString.Lazy()[0m[0m
+[;1m[34m    |[0m[0m
+[;1m[34m111 |[0m[0m [;1m[35mimport qualified Data.ByteString.Lazy       as L[0m[0m
+[;1m[34m    |[0m[0m[;1m[35m ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m[0m
+[0m[0m[0mInstalling library in /Users/yaroslavsavchuk/.stack/snapshots/x86_64-osx/lts-13.8/8.6.3/lib/x86_64-osx-ghc-8.6.3/binary-parsers-0.2.3.0-KZMw3dMrdSk1lHhxDsVvJM
+Registering library for binary-parsers-0.2.3.0..

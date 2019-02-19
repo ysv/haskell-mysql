@@ -1,0 +1,6 @@
+Configuring wire-streams-0.1.1.0...
+Preprocessing library for wire-streams-0.1.1.0..
+Building library for wire-streams-0.1.1.0..
+[1 of 1] Compiling System.IO.Streams.Binary ( src/System/IO/Streams/Binary.hs, .stack-work/dist/x86_64-osx/Cabal-2.4.0.1/build/System/IO/Streams/Binary.o )
+Installing library in /Users/yaroslavsavchuk/.stack/snapshots/x86_64-osx/lts-13.8/8.6.3/lib/x86_64-osx-ghc-8.6.3/wire-streams-0.1.1.0-JkTJdZwC15u6cXmh9OKC7b
+Registering library for wire-streams-0.1.1.0..

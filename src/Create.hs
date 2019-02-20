@@ -25,11 +25,11 @@ instance Create TableName where
 createRowManager :: TableName -> MySQLConn -> IO ()
 createRowManager tableName conn = do
   putStrLn "Enter these values: "
-  print (intercalate ", " (tableColumns tableName))
+  putStrLn (intercalate "\n" (tableColumns tableName))
   field1 <- getLine
   field2 <- getLine
   field3 <- getLine
 
   let params = [field1, field2, field3]
   createRow tableName params conn
-  putStrLn "Created :)"
+  putStrLn "Created !!!"

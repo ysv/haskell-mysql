@@ -27,4 +27,4 @@ deleteRowManager tableName conn = do
   putStrLn "Enter id: "
   index <- getLine
   deleteRow tableName index conn
-  putStrLn "Deleted :)"
+  putStrLn "Deleted !!!"
